@@ -1,0 +1,343 @@
+ctjsVersion: 5.1.0
+backups: 3
+language: typescript
+notes: /* empty */
+libs:
+  place:
+    gridX: 1024
+    gridY: 1024
+  pointer: {}
+  keyboard: {}
+  keyboard.polyfill: {}
+  pointer.polyfill: {}
+startroom: -1
+contentTypes: []
+actions: []
+scripts:
+  - name: game_state
+    code: |+
+      const _OVERALL_SCALE = 1.00;
+      const _GRID_HEIGHT = 5;
+      const _GRID_WIDTH = 5;
+
+
+
+
+
+
+
+
+
+      const grid = () => { 
+          return [_GRID_HEIGHT, _GRID_WIDTH]
+      };
+
+      const overall_scale = (object) => {
+          object.scale = _OVERALL_SCALE;
+          return object;
+      };
+
+
+  - name: transforms
+    code: |-
+      const distribute = (quantity, start) => {
+          let total = Math.PI*2;
+          let segment = total / quantity;
+          let rtn = [];
+          for ( var n=0; n < quantity; n++ ) {
+              rtn.push( ( n*segment ) + start );
+          }
+          return rtn;
+      }
+
+      const circ_get_pos = (centerx, centery, radius, angle_arr) => {
+          //here is where I need to return an array of x,y coordinates.
+          let rtn = [];
+          for ( const angle of angle_arr ) {
+              let h = radius*(Math.sin(angle));
+              let w = radius*(Math.cos(angle));
+              rtn.push([(w+centerx), (h+centery)]);
+          }
+          
+          return rtn;
+      }
+assets:
+  - type: folder
+    uid: 3J19KJKgM1499R
+    colorClass: error
+    icon: room
+    name: rooms
+    lastmod: 1726319213830
+    entries:
+      - type: room
+        oncreate: ''
+        onstep: ''
+        ondraw: ''
+        onleave: ''
+        gridX: 50
+        gridY: 50
+        diagonalGrid: false
+        disableGrid: false
+        simulate: true
+        width: 800
+        height: 500
+        restrictCamera: false
+        restrictMaxX: 1280
+        restrictMinX: 1280
+        restrictMaxY: 720
+        restrictMinY: 720
+        isUi: false
+        name: main
+        backgroundColor: '#000000'
+        follow: -1
+        backgrounds: []
+        copies: []
+        tiles: []
+        extends: {}
+        lastmod: 1727011935482
+        events:
+          - eventKey: OnRoomStart
+            code: >
+              this.center_posx = camera.width*0.5;
+
+              this.center_posy = camera.height*0.5;
+
+              let [ squares_grid_height, squares_grid_width ] = grid();
+
+              console.log(squares_grid_height, squares_grid_width)
+
+
+              // I want to write a function in a custom script that determines
+              the play grid.
+
+              // I need to provide (1) the desired grid dimensions, height and
+              width
+
+              // (2) the square dimensions, height and width
+
+              // (3) the grid center-point, x and y
+
+              // Then the function will return a list of x/y coordinates, each
+              of which is
+
+              // the center of each grid square. The function will also truncate
+              the grid
+
+              // dimensions to those that will fit within the screen.
+
+
+              //var NewObject = {};
+
+              //
+
+              //NewObject['property1'] = value;
+
+              //NewObject['property2'] = value;
+
+              //NewObject['method'] = function(){ /* function code here */ }
+
+
+
+              // Make a temporary off-screen copy of the square template so that
+              we can discover
+
+              // it's height and width. Then destroy the unwanted copy.
+
+              let temp_square = templates.copy("square", -100, -100)
+
+              const square = { height: temp_square.height, width:
+              temp_square.width};
+
+              for (var sqr of templates.list['square']) { sqr.kill = true; }
+
+
+
+              let grid_height = Math.round(( squares_grid_height *
+              (square.height + 1) ) -1);
+
+              let grid_width = Math.round(( squares_grid_width * (square.width +
+              1) ) -1);
+
+              console.log(grid_height, grid_width);
+
+
+              //for ( let x = 0; x < this.squares_grid.width; x += 1) {
+
+              //
+
+              //}
+            arguments: {}
+            lib: core
+        behaviors: []
+        extendTypes: ''
+        uid: T8GCm54qdqn1Rb
+  - type: folder
+    uid: 78D9qJHKm1MJMC
+    colorClass: text
+    icon: texture
+    name: textures
+    lastmod: 1726319656658
+    entries:
+      - lastmod: 1726319715474
+        type: texture
+        name: circle-532x352
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 176
+          - 176
+        marginx: 0
+        marginy: 0
+        imgWidth: 352
+        imgHeight: 352
+        width: 352
+        height: 352
+        offx: 0
+        offy: 0
+        origname: iFRLHRGLhwmgCc9.png
+        shape: circle
+        left: 176
+        right: 176
+        top: 176
+        bottom: 176
+        uid: FRLHRGLhwmgCc9
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/strategy/circle-532x352.png
+        r: 176
+      - lastmod: 1726986115409
+        type: texture
+        name: square
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 32
+          - 32
+        marginx: 0
+        marginy: 0
+        imgWidth: 64
+        imgHeight: 64
+        width: 64
+        height: 64
+        offx: 0
+        offy: 0
+        origname: iz951Hf5gF8FkgG.png
+        shape: rect
+        left: 32
+        right: 32
+        top: 32
+        bottom: 32
+        uid: z951Hf5gF8FkgG
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/wasd-grid/square.png
+  - type: folder
+    uid: 6zbC8QmkHmKKLn
+    colorClass: accent1
+    icon: template
+    name: templates
+    lastmod: 1726320234164
+    entries:
+      - type: template
+        baseClass: AnimatedSprite
+        name: circle
+        depth: 100
+        texture: FRLHRGLhwmgCc9
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: this.move();
+            arguments: {}
+          - eventKey: OnCreate
+            code: |
+              let own_scale = overall_scale(this);
+            arguments: {}
+            lib: core
+        extends:
+          cgroup: ''
+        lastmod: 1726322441893
+        uid: Lwbf9LKPJL5PB5
+        behaviors: []
+        extendTypes: ''
+      - type: template
+        baseClass: AnimatedSprite
+        name: square
+        depth: 100
+        texture: z951Hf5gF8FkgG
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: this.move();
+            arguments: {}
+        extends:
+          cgroup: ''
+        lastmod: 1726986981274
+        uid: P7CM4rCn8HzjmM
+        behaviors: []
+        extendTypes: ''
+globalVars: []
+settings:
+  authoring:
+    author: ''
+    site: ''
+    title: ''
+    version:
+      - 0
+      - 0
+      - 0
+    versionPostfix: ''
+    appId: ''
+  rendering:
+    usePixiLegacy: true
+    transparent: false
+    maxFPS: 60
+    pixelatedrender: false
+    highDensity: true
+    desktopMode: maximized
+    hideCursor: false
+    mobileScreenOrientation: unspecified
+    viewMode: scaleFit
+  export:
+    showErrors: true
+    errorsLink: ''
+    autocloseDesktop: true
+    windows: true
+    linux: true
+    mac: true
+    functionWrap: false
+    codeModifier: none
+    bundleAssetTree: false
+    bundleAssetTypes:
+      texture: true
+      template: true
+      room: true
+      behavior: false
+      typeface: false
+      sound: false
+      style: false
+      tandem: false
+      script: false
+      enum: false
+  branding:
+    accent: '#446adb'
+    invertPreloaderScheme: true
+    icon: -1
+    splashScreen: -1
+    forceSmoothIcons: false
+    forceSmoothSplashScreen: false
+    hideLoadingLogo: false
+    alternativeLogo: false
+    customLoadingText: ''
+  fps: 30
