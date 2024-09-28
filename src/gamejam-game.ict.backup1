@@ -116,7 +116,7 @@ assets:
         copies: []
         tiles: []
         extends: {}
-        lastmod: 1727519840744
+        lastmod: 1727519719305
         events:
           - eventKey: OnRoomStart
             code: >
@@ -416,19 +416,9 @@ assets:
             code: this.tint=3462;
             arguments: {}
             lib: core
-          - eventKey: OnActionPress
-            code: this.tint += 100;
-            arguments:
-              action: LeftClick
-            lib: core
-          - eventKey: OnActionPress
-            code: this.tint -= 100;
-            arguments:
-              action: RightClick
-            lib: core
         extends:
           cgroup: ''
-        lastmod: 1727519840753
+        lastmod: 1727518285378
         uid: KWdCdFP5PmPC22
         behaviors: []
         extendTypes: ''

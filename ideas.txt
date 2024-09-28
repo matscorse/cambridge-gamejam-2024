@@ -1,0 +1,10 @@
+factorio,
+machine.
+
+game and watch style for making hats in a factory
+
+what art style? - I like the idea of black and white.
+
+hex-machina
+
+mouse controlled, right click selects tool, left click places for once cycle

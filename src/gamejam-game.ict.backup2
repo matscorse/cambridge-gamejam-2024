@@ -729,7 +729,7 @@ assets:
             bindings: {}
         tiles: []
         extends: {}
-        lastmod: 1727519498580
+        lastmod: 1727518351968
         events:
           - eventKey: OnRoomStart
             code: >
