@@ -103,7 +103,7 @@ assets:
         follow: -1
         backgrounds:
           - depth: -100
-            texture: jwW1jJGJtfbh7d
+            texture: T7DdqD5Pd6jL5B
             shiftX: 0
             shiftY: 0
             parallaxX: 1
@@ -113,10 +113,34 @@ assets:
             scaleX: 1
             scaleY: 1
             repeat: no-repeat
-        copies: []
+        copies:
+          - x: 448
+            'y': 352
+            opacity: 0.55
+            tint: '#4fffdf'
+            scale:
+              x: 1.55
+              'y': 0.57
+            rotation: 0
+            uid: P9bT3c3kCnw5NM
+            exts: {}
+            customProperties: {}
+            bindings: {}
+          - x: 448
+            'y': 272
+            opacity: 1
+            tint: 16777215
+            scale:
+              x: 0.3
+              'y': 0.3
+            rotation: 0
+            uid: qP36dqMhrMbtrd
+            exts: {}
+            customProperties: {}
+            bindings: {}
         tiles: []
         extends: {}
-        lastmod: 1727519840744
+        lastmod: 1727523524762
         events:
           - eventKey: OnRoomStart
             code: >
@@ -295,6 +319,121 @@ assets:
         isBlank: false
         source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Moon.png
         tiled: true
+      - lastmod: 1727521034406
+        type: texture
+        name: Rails
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 344
+          - 116
+        marginx: 0
+        marginy: 0
+        imgWidth: 685
+        imgHeight: 556
+        width: 685
+        height: 556
+        offx: 0
+        offy: 0
+        origname: i256j7QhWqJ6n7T.png
+        shape: rect
+        left: 344
+        right: 340
+        top: 116
+        bottom: 439
+        uid: 256j7QhWqJ6n7T
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Rails.png
+      - lastmod: 1727521711866
+        type: texture
+        name: Moon2
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 0
+          - 0
+        marginx: 0
+        marginy: 0
+        imgWidth: 896
+        imgHeight: 576
+        width: 896
+        height: 576
+        offx: 0
+        offy: 0
+        origname: iT7DdqD5Pd6jL5B.png
+        shape: rect
+        left: 0
+        right: 896
+        top: 0
+        bottom: 576
+        uid: T7DdqD5Pd6jL5B
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Moon2.png
+        tiled: true
+      - lastmod: 1727523377045
+        type: texture
+        name: Machine2
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 321
+          - 313
+        marginx: 0
+        marginy: 0
+        imgWidth: 587
+        imgHeight: 642
+        width: 587
+        height: 642
+        offx: 0
+        offy: 0
+        origname: iwgTq4qfq89FhwM.png
+        shape: strip
+        left: 321
+        right: 266
+        top: 313
+        bottom: 329
+        uid: wgTq4qfq89FhwM
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Machine2.png
+        stripPoints:
+          - x: 53
+            'y': -311
+          - x: 106
+            'y': -200
+          - x: 223
+            'y': -284
+          - x: 191
+            'y': 125
+          - x: 260
+            'y': 245
+          - x: 44
+            'y': 314
+          - x: -130
+            'y': 298
+          - x: -255
+            'y': 93
+          - x: -321
+            'y': 11
+          - x: -252
+            'y': -87
+          - x: -164
+            'y': -122
+          - x: -164
+            'y': -287
+          - x: -72
+            'y': -183
+          - x: -15
+            'y': -257
+        closedStrip: true
   - type: folder
     uid: 6zbC8QmkHmKKLn
     colorClass: accent1
@@ -399,7 +538,7 @@ assets:
         baseClass: AnimatedSprite
         name: mouse
         depth: 120
-        texture: z951Hf5gF8FkgG
+        texture: FRLHRGLhwmgCc9
         playAnimationOnStart: false
         loopAnimation: true
         animationFPS: 30
@@ -413,7 +552,9 @@ assets:
               this.x = pointer.x; this.y = pointer.y;
             arguments: {}
           - eventKey: OnCreate
-            code: this.tint=3462;
+            code: |-
+              this.tint=3462;
+              this.scale.x = this.scale.y = 0.2;
             arguments: {}
             lib: core
           - eventKey: OnActionPress
@@ -428,8 +569,49 @@ assets:
             lib: core
         extends:
           cgroup: ''
-        lastmod: 1727519840753
+        lastmod: 1727522092720
         uid: KWdCdFP5PmPC22
+        behaviors: []
+        extendTypes: ''
+      - type: template
+        baseClass: AnimatedSprite
+        name: Rails
+        depth: -10
+        texture: 256j7QhWqJ6n7T
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: this.move();
+            arguments: {}
+        extends:
+          cgroup: ''
+          alpha: 0.8
+        lastmod: 1727521083150
+        uid: P9bT3c3kCnw5NM
+        behaviors: []
+        extendTypes: ''
+      - type: template
+        baseClass: AnimatedSprite
+        name: Machine2
+        depth: -50
+        texture: wgTq4qfq89FhwM
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: this.move();
+            arguments: {}
+        extends:
+          cgroup: ''
+        lastmod: 1727523507730
+        uid: qP36dqMhrMbtrd
         behaviors: []
         extendTypes: ''
 globalVars: []
@@ -486,3 +668,4 @@ settings:
     alternativeLogo: false
     customLoadingText: ''
   fps: 30
+palette: []

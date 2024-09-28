@@ -101,635 +101,34 @@ assets:
         name: main
         backgroundColor: '#000000'
         follow: -1
-        backgrounds: []
+        backgrounds:
+          - depth: -100
+            texture: T7DdqD5Pd6jL5B
+            shiftX: 0
+            shiftY: 0
+            parallaxX: 1
+            parallaxY: 1
+            movementX: 0
+            movementY: 0
+            scaleX: 1
+            scaleY: 1
+            repeat: no-repeat
         copies:
-          - x: 864
-            'y': 512
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 864
-            'y': 352
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 864
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 32
-            'y': 384
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 32
-            'y': 224
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 800
-            'y': 352
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 800
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 800
-            'y': 512
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 96
-            'y': 384
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 96
-            'y': 224
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 32
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 96
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 160
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 224
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 288
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 352
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 416
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 480
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 544
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 608
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 672
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 736
-            'y': 544
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 160
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 224
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 288
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 352
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 416
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 480
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 544
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 608
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 672
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 736
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 800
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 864
-            'y': 32
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 800
-            'y': 576
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 864
-            'y': 576
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 32
-            'y': 0
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 96
-            'y': 0
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: 4dmJFfrTkTgT26
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 96
-            'y': 64
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 32
-            'y': 64
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: P7CM4rCn8HzjmM
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 672
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 608
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 544
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 480
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 416
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 352
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 288
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 224
-            'y': 192
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 512
-            'y': 256
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
           - x: 448
-            'y': 320
-            opacity: 1
-            tint: 16777215
+            'y': 416
+            opacity: 0.55
+            tint: '#4fffdf'
             scale:
-              x: 1
-              'y': 1
+              x: 1.25
+              'y': 0.57
             rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 384
-            'y': 320
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
-            exts: {}
-            customProperties: {}
-            bindings: {}
-          - x: 320
-            'y': 320
-            opacity: 1
-            tint: 16777215
-            scale:
-              x: 1
-              'y': 1
-            rotation: 0
-            uid: bgjrmWDJTH8H5R
+            uid: P9bT3c3kCnw5NM
             exts: {}
             customProperties: {}
             bindings: {}
         tiles: []
         extends: {}
-        lastmod: 1727519498580
+        lastmod: 1727521738944
         events:
           - eventKey: OnRoomStart
             code: >
@@ -879,6 +278,92 @@ assets:
         padding: 1
         isBlank: false
         source: /home/matscorse/ct.js/Projects/wasd-grid/square.png
+      - lastmod: 1727519621577
+        type: texture
+        name: Moon
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 0
+          - 0
+        marginx: 0
+        marginy: 0
+        imgWidth: 896
+        imgHeight: 576
+        width: 896
+        height: 576
+        offx: 0
+        offy: 0
+        origname: ijwW1jJGJtfbh7d.png
+        shape: rect
+        left: 0
+        right: 896
+        top: 0
+        bottom: 576
+        uid: jwW1jJGJtfbh7d
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Moon.png
+        tiled: true
+      - lastmod: 1727521034406
+        type: texture
+        name: Rails
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 344
+          - 116
+        marginx: 0
+        marginy: 0
+        imgWidth: 685
+        imgHeight: 556
+        width: 685
+        height: 556
+        offx: 0
+        offy: 0
+        origname: i256j7QhWqJ6n7T.png
+        shape: rect
+        left: 344
+        right: 340
+        top: 116
+        bottom: 439
+        uid: 256j7QhWqJ6n7T
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Rails.png
+      - lastmod: 1727521711866
+        type: texture
+        name: Moon2
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 0
+          - 0
+        marginx: 0
+        marginy: 0
+        imgWidth: 896
+        imgHeight: 576
+        width: 896
+        height: 576
+        offx: 0
+        offy: 0
+        origname: iT7DdqD5Pd6jL5B.png
+        shape: rect
+        left: 0
+        right: 896
+        top: 0
+        bottom: 576
+        uid: T7DdqD5Pd6jL5B
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Moon2.png
+        tiled: true
   - type: folder
     uid: 6zbC8QmkHmKKLn
     colorClass: accent1
@@ -1000,10 +485,41 @@ assets:
             code: this.tint=3462;
             arguments: {}
             lib: core
+          - eventKey: OnActionPress
+            code: this.tint += 100;
+            arguments:
+              action: LeftClick
+            lib: core
+          - eventKey: OnActionPress
+            code: this.tint -= 100;
+            arguments:
+              action: RightClick
+            lib: core
         extends:
           cgroup: ''
-        lastmod: 1727518285378
+        lastmod: 1727519840753
         uid: KWdCdFP5PmPC22
+        behaviors: []
+        extendTypes: ''
+      - type: template
+        baseClass: AnimatedSprite
+        name: Rails
+        depth: -10
+        texture: 256j7QhWqJ6n7T
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: this.move();
+            arguments: {}
+        extends:
+          cgroup: ''
+          alpha: 0.8
+        lastmod: 1727521083150
+        uid: P9bT3c3kCnw5NM
         behaviors: []
         extendTypes: ''
 globalVars: []
@@ -1060,3 +576,4 @@ settings:
     alternativeLogo: false
     customLoadingText: ''
   fps: 30
+palette: []
