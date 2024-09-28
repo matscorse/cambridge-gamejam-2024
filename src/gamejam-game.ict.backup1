@@ -10,6 +10,7 @@ libs:
   keyboard: {}
   keyboard.polyfill: {}
   pointer.polyfill: {}
+  random: {}
 startroom: -1
 contentTypes: []
 actions:
@@ -26,29 +27,61 @@ actions:
       - code: pointer.Wheel
 scripts:
   - name: game_state
-    code: |+
-      const _OVERALL_SCALE = 1.00;
-      const _GRID_HEIGHT = 5;
-      const _GRID_WIDTH = 5;
+    code: >
+      const _START_HAT_SPD_MIN =10;
+
+      const _START_HAT_SPD_MAX = 40;
+
+      const _START_HAT_SCALE = 0.2;
+
+      const _START_HAT_POSITIONS = [ Math.floor(camera.width*0.1),
+      Math.floor(camera.width*0.5), Math.floor(camera.width*0.9)];
+
+      const _START_HAT_Y = camera.height + 50;
+
+      var _MACHINE_CENTERX;
+
+      var _MACHINE_CENTERY;
+
+      var _RAIL_SPEEDS = [];
+
+      for (var a_rail = 0; a_rail < 3; a_rail++) {
+          _RAIL_SPEEDS.push(random.range(_START_HAT_SPD_MIN, _START_HAT_SPD_MAX))
+      }
 
 
+      const rail_speeds = (rail) => {
+          return _RAIL_SPEEDS[rail];
+      }
 
 
+      //const start_hat_speed = () => {
+
+      //    return random.range(_START_HAT_SPD_MIN, _START_HAT_SPD_MAX);
+
+      //};
 
 
-
-
-
-      const grid = () => { 
-          return [_GRID_HEIGHT, _GRID_WIDTH]
+      const start_hat_scale = () => { 
+          return _START_HAT_SCALE
       };
 
-      const overall_scale = (object) => {
-          object.scale = _OVERALL_SCALE;
-          return object;
+
+      const start_hat_position = () => {
+          let tmp = random.dice(0, 1, 2);
+          return tmp;
       };
 
 
+      const start_hat_position_x = (hatpos) => {
+          let hat = _START_HAT_POSITIONS[hatpos];
+          return hat;
+      };
+
+
+      const start_hat_position_y = () => {
+          return _START_HAT_Y;
+      };
   - name: transforms
     code: |-
       const distribute = (quantity, start) => {
@@ -126,15 +159,34 @@ assets:
             exts: {}
             customProperties: {}
             bindings: {}
+          - x: 448
+            'y': 272
+            opacity: 1
+            tint: 16777215
+            scale:
+              x: 0.3
+              'y': 0.3
+            rotation: 0
+            uid: qP36dqMhrMbtrd
+            exts: {}
+            customProperties: {}
+            bindings: {}
         tiles: []
         extends: {}
-        lastmod: 1727521943590
+        lastmod: 1727539638645
         events:
           - eventKey: OnRoomStart
             code: >
               this.center_posx = camera.width*0.5;
 
               this.center_posy = camera.height*0.5;
+
+
+              this.timer1 = 4.0; // hat part timer
+
+
+              //this.timer2 = 3; // enemy timer
+
 
 
               this.mousepointer = templates.copy("mouse", -100, -100);
@@ -210,6 +262,27 @@ assets:
             code: |+
 
             arguments: {}
+            lib: core
+          - eventKey: Timer1
+            code: >
+              // hattimer
+
+              this.timer1 = random.range(5.0, 8.0);
+
+              this.start_position = start_hat_position();
+
+              //console.log(this.start_position,
+              start_hat_position_x(this.start_position),
+              start_hat_position_y());
+
+              this.hat_part = random.dice('TopHat', 'MiddleHat', 'BottomHat')
+
+              templates.copy(this.hat_part,
+              start_hat_position_x(this.start_position),
+              start_hat_position_y());
+            arguments:
+              name: HatTimer
+              isUi: false
             lib: core
         behaviors: []
         extendTypes: ''
@@ -364,6 +437,235 @@ assets:
         isBlank: false
         source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Moon2.png
         tiled: true
+      - lastmod: 1727523377045
+        type: texture
+        name: Machine2
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 321
+          - 313
+        marginx: 0
+        marginy: 0
+        imgWidth: 587
+        imgHeight: 642
+        width: 587
+        height: 642
+        offx: 0
+        offy: 0
+        origname: iwgTq4qfq89FhwM.png
+        shape: strip
+        left: 321
+        right: 266
+        top: 313
+        bottom: 329
+        uid: wgTq4qfq89FhwM
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/Machine2.png
+        stripPoints:
+          - x: 53
+            'y': -311
+          - x: 106
+            'y': -200
+          - x: 223
+            'y': -284
+          - x: 191
+            'y': 125
+          - x: 260
+            'y': 245
+          - x: 44
+            'y': 314
+          - x: -130
+            'y': 298
+          - x: -255
+            'y': 93
+          - x: -321
+            'y': 11
+          - x: -252
+            'y': -87
+          - x: -164
+            'y': -122
+          - x: -164
+            'y': -287
+          - x: -72
+            'y': -183
+          - x: -15
+            'y': -257
+        closedStrip: true
+      - lastmod: 1727526568031
+        type: texture
+        name: LeftArrow
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 424
+          - 393
+        marginx: 0
+        marginy: 0
+        imgWidth: 848
+        imgHeight: 786
+        width: 848
+        height: 786
+        offx: 0
+        offy: 0
+        origname: imTNCtqQkjQQ68F.png
+        shape: circle
+        left: 424
+        right: 424
+        top: 393
+        bottom: 393
+        uid: mTNCtqQkjQQ68F
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/LeftArrow.png
+        r: 392
+      - lastmod: 1727526597499
+        type: texture
+        name: RightArrow
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 424
+          - 393
+        marginx: 0
+        marginy: 0
+        imgWidth: 848
+        imgHeight: 786
+        width: 848
+        height: 786
+        offx: 0
+        offy: 0
+        origname: iF6p1hrtCJqhRQJ.png
+        shape: circle
+        left: 424
+        right: 424
+        top: 393
+        bottom: 393
+        uid: F6p1hrtCJqhRQJ
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/RightArrow.png
+        r: 392
+      - lastmod: 1727526639148
+        type: texture
+        name: SwapArrow
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 424
+          - 393
+        marginx: 0
+        marginy: 0
+        imgWidth: 848
+        imgHeight: 786
+        width: 848
+        height: 786
+        offx: 0
+        offy: 0
+        origname: i3qnDq23hhC8PgK.png
+        shape: circle
+        left: 424
+        right: 424
+        top: 393
+        bottom: 393
+        uid: 3qnDq23hhC8PgK
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/SwapArrow.png
+        r: 392
+      - lastmod: 1727530221195
+        type: texture
+        name: BottomHat
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 236
+          - 129
+        marginx: 0
+        marginy: 0
+        imgWidth: 473
+        imgHeight: 259
+        width: 473
+        height: 259
+        offx: 0
+        offy: 0
+        origname: ipbF2Hm1dMGh4jM.png
+        shape: rect
+        left: 236
+        right: 237
+        top: 129
+        bottom: 130
+        uid: pbF2Hm1dMGh4jM
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/BottomHat.png
+      - lastmod: 1727530226633
+        type: texture
+        name: MiddleHat
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 236
+          - 129
+        marginx: 0
+        marginy: 0
+        imgWidth: 473
+        imgHeight: 259
+        width: 473
+        height: 259
+        offx: 0
+        offy: 0
+        origname: ikG21TztW2McjWR.png
+        shape: rect
+        left: 236
+        right: 237
+        top: 129
+        bottom: 130
+        uid: kG21TztW2McjWR
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/MiddleHat.png
+      - lastmod: 1727530235435
+        type: texture
+        name: TopHat
+        untill: 0
+        grid:
+          - 1
+          - 1
+        axis:
+          - 236
+          - 129
+        marginx: 0
+        marginy: 0
+        imgWidth: 473
+        imgHeight: 259
+        width: 473
+        height: 259
+        offx: 0
+        offy: 0
+        origname: i1dqQ7m1tBL1zw1.png
+        shape: rect
+        left: 236
+        right: 237
+        top: 129
+        bottom: 130
+        uid: 1dqQ7m1tBL1zw1
+        padding: 1
+        isBlank: false
+        source: /home/matscorse/ct.js/Projects/cambridge-gamejam-2024/TopHat.png
   - type: folder
     uid: 6zbC8QmkHmKKLn
     colorClass: accent1
@@ -468,7 +770,7 @@ assets:
         baseClass: AnimatedSprite
         name: mouse
         depth: 120
-        texture: z951Hf5gF8FkgG
+        texture: 3qnDq23hhC8PgK
         playAnimationOnStart: false
         loopAnimation: true
         animationFPS: 30
@@ -482,22 +784,35 @@ assets:
               this.x = pointer.x; this.y = pointer.y;
             arguments: {}
           - eventKey: OnCreate
-            code: this.tint=3462;
+            code: >-
+              this.scale.x = this.scale.y = 0.1;
+
+              this.actions = [ "SwapArrow",  "LeftArrow", "SwapArrow",
+              "RightArrow" ];
+
+              this.tex = this.actions[0];
             arguments: {}
             lib: core
           - eventKey: OnActionPress
-            code: this.tint += 100;
+            code: this.tint = 0x446adb;
             arguments:
               action: LeftClick
             lib: core
           - eventKey: OnActionPress
-            code: this.tint -= 100;
+            code: |
+              this.actions.push(this.actions.shift());
+              this.tex = this.actions[0];
             arguments:
               action: RightClick
             lib: core
+          - eventKey: OnActionRelease
+            code: this.tint = 0xffffff;
+            arguments:
+              action: LeftClick
+            lib: core
         extends:
           cgroup: ''
-        lastmod: 1727519840753
+        lastmod: 1727531427768
         uid: KWdCdFP5PmPC22
         behaviors: []
         extendTypes: ''
@@ -520,6 +835,165 @@ assets:
           alpha: 0.8
         lastmod: 1727521083150
         uid: P9bT3c3kCnw5NM
+        behaviors: []
+        extendTypes: ''
+      - type: template
+        baseClass: AnimatedSprite
+        name: Machine2
+        depth: -50
+        texture: wgTq4qfq89FhwM
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: this.move();
+            arguments: {}
+          - eventKey: OnCreate
+            code: |-
+              globalThis._MACHINE_CENTERX = this.x;
+              globalThis._MACHINE_CENTERY = this.y;
+            arguments: {}
+            lib: core
+        extends:
+          cgroup: ''
+        lastmod: 1727537744634
+        uid: qP36dqMhrMbtrd
+        behaviors: []
+        extendTypes: ''
+      - type: template
+        baseClass: AnimatedSprite
+        name: BottomHat
+        depth: 10
+        texture: pbF2Hm1dMGh4jM
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: this.move();
+            arguments: {}
+          - eventKey: OnCreate
+            code: |
+              this.scale.x = this.scale.y = start_hat_scale();
+
+              let targetx = this.x - globalThis._MACHINE_CENTERX;
+              let targety = this.y - globalThis._MACHINE_CENTERY;
+              let mag_angle = (Math.tanh(targety / targetx) * 360);
+              let angle = Math.round(mag_angle - 90);
+              console.log(angle);
+
+              if (this.x == _START_HAT_POSITIONS[0]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(0);
+              };
+              if (this.x == _START_HAT_POSITIONS[1]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(1);
+              };
+              if (this.x == _START_HAT_POSITIONS[2]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(2);
+              };
+            arguments: {}
+            lib: core
+        extends:
+          cgroup: ''
+        lastmod: 1727534951837
+        uid: Q9CPBkKPPdPwrL
+        behaviors: []
+        extendTypes: ''
+      - type: template
+        baseClass: AnimatedSprite
+        name: MiddleHat
+        depth: 0
+        texture: kG21TztW2McjWR
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: this.move();
+            arguments: {}
+          - eventKey: OnCreate
+            code: |
+              this.scale.x = this.scale.y = start_hat_scale();
+
+              let targetx = this.x - globalThis._MACHINE_CENTERX;
+              let targety = this.y - globalThis._MACHINE_CENTERY;
+              let mag_angle = (Math.tanh(targety / targetx) * 360);
+              let angle = Math.round(mag_angle - 90);
+              console.log(angle);
+
+              if (this.x == _START_HAT_POSITIONS[0]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(0);
+              };
+              if (this.x == _START_HAT_POSITIONS[1]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(1);
+              };
+              if (this.x == _START_HAT_POSITIONS[2]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(2);
+              };
+            arguments: {}
+            lib: core
+        extends:
+          cgroup: ''
+        lastmod: 1727534951772
+        uid: PnMDFk8w2fDCDD
+        behaviors: []
+        extendTypes: ''
+      - type: template
+        baseClass: AnimatedSprite
+        name: TopHat
+        depth: 0
+        texture: 1dqQ7m1tBL1zw1
+        playAnimationOnStart: false
+        loopAnimation: true
+        animationFPS: 30
+        visible: true
+        events:
+          - eventKey: OnStep
+            lib: core
+            code: |
+              this.move();
+            arguments: {}
+          - eventKey: OnCreate
+            code: |
+              this.scale.x = this.scale.y = start_hat_scale();
+
+              let targetx = this.x - globalThis._MACHINE_CENTERX;
+              let targety = this.y - globalThis._MACHINE_CENTERY;
+              let mag_angle = (Math.tanh(targety / targetx) * 360);
+              let angle = Math.round(mag_angle - 90);
+              console.log(angle);
+
+              if (this.x == _START_HAT_POSITIONS[0]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(0);
+              };
+              if (this.x == _START_HAT_POSITIONS[1]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(1);
+              };
+              if (this.x == _START_HAT_POSITIONS[2]) {
+                  this.direction = angle;
+                  this.speed = rail_speeds(2);
+              };
+            arguments: {}
+            lib: core
+        extends:
+          cgroup: ''
+        lastmod: 1727534909153
+        uid: WKGkkMCbjmMNrJ
         behaviors: []
         extendTypes: ''
 globalVars: []
