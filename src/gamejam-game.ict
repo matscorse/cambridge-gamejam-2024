@@ -173,7 +173,7 @@ assets:
             bindings: {}
         tiles: []
         extends: {}
-        lastmod: 1727539904592
+        lastmod: 1727541997533
         events:
           - eventKey: OnRoomStart
             code: >
@@ -885,7 +885,7 @@ assets:
               let targety = this.y - globalThis._MACHINE_CENTERY;
               let mag_angle = (Math.tan(targety / targetx) * 360);
               let angle = Math.round(mag_angle - 90);
-              console.log(angle);
+              //console.log(angle);
 
               if (this.x == _START_HAT_POSITIONS[0]) {
                   this.direction = angle;
@@ -929,7 +929,7 @@ assets:
               let targety = this.y - globalThis._MACHINE_CENTERY;
               let mag_angle = (Math.tan(targety / targetx) * 360);
               let angle = Math.round(mag_angle - 90);
-              console.log(angle);
+              //console.log(angle);
 
               if (this.x == _START_HAT_POSITIONS[0]) {
                   this.direction = angle;
@@ -970,11 +970,11 @@ assets:
             code: |
               this.scale.x = this.scale.y = start_hat_scale();
 
-              let targetx = this.x - globalThis._MACHINE_CENTERX;
+              let targetx = globalThis._MACHINE_CENTERX - this.x;
               let targety = this.y - globalThis._MACHINE_CENTERY;
               let mag_angle = (Math.tan(targety / targetx) * 360);
               let angle = Math.round(mag_angle - 90);
-              console.log(angle);
+              console.log(270 + (Math.atan(-50/50)/Math.PI)*180);
 
               if (this.x == _START_HAT_POSITIONS[0]) {
                   this.direction = angle;
