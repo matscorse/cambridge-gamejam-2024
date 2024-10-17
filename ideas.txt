@@ -10,3 +10,5 @@ hex-machina
 mouse controlled, right click selects tool, left click places for once cycle
 
 moon based
+
+Mothballing this
